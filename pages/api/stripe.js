@@ -24,6 +24,11 @@ export default async function handler(req, res) {
             submit_type: 'pay'
             payment_method_type: ['card']
             billing_address_collection: 'auto'
+            shipping_options: [
+              {shipping_rate: 'shr_1LVeSaK2JulIqBTmfAAp7pEI'},
+              {shipping_rate: 'shr_1LVeVjK2JulIqBTmaQg2B1fb'}
+            ],
+            
             line_items: [
             {
                 // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
