@@ -26,16 +26,16 @@ const Cart = () => {
     const cartRef = useRef()
     const { totalPrice, totalQuantities, cartItems, setShowCart, toggleCartItemQuantity,onRemove} = useStateContext();
 
-    const handleCheckout = f => {
+    const handleCheckout = async f => {
+        return alert("We are Doing Ready to This")
        const stripe = await getStripe()
-
        const response = await fetch('/api/stripe', {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
-            }
+            },
            
-            body: JSON.stringify(cartItems),
+            body:JSON.stringify(cartItems),
        })
 
        if(response.stateusCod === 500) return
